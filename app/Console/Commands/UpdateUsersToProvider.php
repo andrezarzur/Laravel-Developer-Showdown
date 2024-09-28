@@ -99,7 +99,7 @@ class UpdateUsersToProvider extends Command
 
         // simulating api call, I'm redoing the for just to separate the log from the batch creation
         foreach ($requestBody['batches']['subscribers'] as $index => $user) {
-            logger('[' . $index . '] firstname:' . $user['name'] . ' timezone:' . $user['timezone']);
+            logger('[' . $index . '] firstname:' . $user['name'] . ' timezone:' . $user['time_zone']);
         }
 
         Queue::whereIn('id', $usersToDeleteFromQueue)->delete();
